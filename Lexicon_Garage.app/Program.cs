@@ -1,4 +1,14 @@
 ﻿
 using Lexicon_Garage.app;
 
-Vehicle vehicle = new Vehicle();
+namespace Lexicon_Garage
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Vehicle vehicle = new Vehicle();
+        }
+
+    }
+}
