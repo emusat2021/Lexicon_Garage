@@ -14,6 +14,6 @@ namespace Lexicon_Garage.app
         int NumberOfWheels { get; set; }
         int NumberOfSets { get; set; }
         string Fueltype { get; set; }
-        }
+        
     }
 }
