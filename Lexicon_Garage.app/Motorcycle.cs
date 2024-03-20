@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lexicon_Garage.app
 {
-    internal class Motorcycle : Vehicle
+    internal class Motorcycle : IVehicle
     {
-        public Motorcycle(int numberOfWheels, string registrationNumber, string color, int numberOfSets, string fueltype) : base(numberOfWheels, registrationNumber, color, numberOfSets, fueltype)
-        {
-        }
+        public string RegistrationNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Color { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int NumberOfWheels { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int NumberOfSets { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Fueltype { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

@@ -7,7 +7,7 @@ namespace Lexicon_Garage
     {
         static void Main(string[] args)
         {
-            Vehicle vehicle = new Vehicle();
+            Console.WriteLine("");
         }
 
     }
