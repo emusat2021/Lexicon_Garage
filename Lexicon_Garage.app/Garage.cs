@@ -29,6 +29,21 @@ namespace Lexicon_Garage.app
             }
         }
 
+        public void RemoveVehicle(T vehicleToBeRemoved)
+        {
+            int index = Array.IndexOf(vehicles, vehicleToBeRemoved);
+            if(index != -1)
+            {
+                vehicles = vehicles.Where((val, idx) => idx !=index).ToArray();
+                count--;
+                Console.WriteLine($"{vehicleToBeRemoved} removed");
+            }
+            else
+            {
+                Console.WriteLine($"{nameof(vehicleToBeRemoved)} no found in Garage");
+            }
+        }
+
 
     }
 }
