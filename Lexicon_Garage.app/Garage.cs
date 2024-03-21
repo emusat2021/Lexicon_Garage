@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lexicon_Garage.app
 {
-    internal class Garage <T> where T : IVehicle
+    internal class Garage<T> : IGarage<T> where T : IVehicle
     {
         private T[] vehicles;
         private int count;
@@ -19,7 +19,7 @@ namespace Lexicon_Garage.app
 
         public void AddVehicle(T vehicle)
         {
-            if(count < vehicles.Length)
+            if (count < vehicles.Length)
             {
                 vehicles[count++] = vehicle;
             }
@@ -32,9 +32,9 @@ namespace Lexicon_Garage.app
         public void RemoveVehicle(T vehicleToBeRemoved)
         {
             int index = Array.IndexOf(vehicles, vehicleToBeRemoved);
-            if(index != -1)
+            if (index != -1)
             {
-                vehicles = vehicles.Where((val, idx) => idx !=index).ToArray();
+                vehicles = vehicles.Where((val, idx) => idx != index).ToArray();
                 count--;
                 Console.WriteLine($"{vehicleToBeRemoved} removed");
             }
@@ -46,7 +46,7 @@ namespace Lexicon_Garage.app
 
         public void ListVehicles()
         {
-            foreach( T vehicle in vehicles )
+            foreach (T vehicle in vehicles)
             {
                 Console.WriteLine($"{nameof(vehicle)} are in the Garage");
             }
