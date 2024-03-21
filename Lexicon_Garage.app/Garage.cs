@@ -44,6 +44,14 @@ namespace Lexicon_Garage.app
             }
         }
 
+        public void ListVehicles()
+        {
+            foreach( T vehicle in vehicles )
+            {
+                Console.WriteLine($"{nameof(vehicle)} are in the Garage");
+            }
+        }
+
 
     }
 }
