@@ -8,6 +8,15 @@ namespace Lexicon_Garage.app
 {
     internal class Garage <T> where T : IVehicle
     {
-        private T[] vehicle;
+        private T[] vehicles;
+        private int count;
+
+        public Garage(int capacity)
+        {
+            vehicles = new T[capacity];
+            count = 0;
+        }
+
+
     }
 }
