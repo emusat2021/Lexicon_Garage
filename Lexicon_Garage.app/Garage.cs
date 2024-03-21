@@ -17,6 +17,18 @@ namespace Lexicon_Garage.app
             count = 0;
         }
 
+        public void AddVehicle(T vehicle)
+        {
+            if(count < vehicles.Length)
+            {
+                vehicles[count++] = vehicle;
+            }
+            else
+            {
+                Console.WriteLine("The is no place in the Garage");
+            }
+        }
+
 
     }
 }
