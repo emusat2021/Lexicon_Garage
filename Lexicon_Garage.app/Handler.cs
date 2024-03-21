@@ -8,8 +8,12 @@ namespace Lexicon_Garage.app
 {
     internal class Handler : IHandler
     {
-        private int _capacity;
         public int Capacity { get; set; }
+
+        public Handler(int capacity)
+        {
+            Capacity = capacity;
+        }
 
         public Garage<T> CreateGarage<T>() where T : IVehicle
         {
