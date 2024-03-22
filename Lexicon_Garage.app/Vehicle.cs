@@ -3,33 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Lexicon_Garage.app
 {
     internal class Vehicle : IVehicle
     {
-        private readonly string _registrationNumber;
-        private string _color;
-        private int _numberOfWheels;
-        private int _numberOfSets;
-        private string _fueltype;
+        public string Model { get; set; }
+        public string RegistrationNumber { get; set; }
+        public string Color { get; set; }
+        public int NumberOfWheels { get; set; }
+        public int NumberOfSets { get; set; }
+        public string Fueltype { get; set; }
 
-        public string RegistrationNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Color { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int NumberOfWheels { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int NumberOfSets { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Fueltype { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Vehicle()
+
+        public Vehicle(string model, string registrationNumber, string color, string fueltype, int numberOfSets, int numberOfWheels )
         {
+            Model = model;
+            RegistrationNumber = registrationNumber;
+            Color = color;
+            Fueltype = fueltype;
+            NumberOfSets = numberOfSets;
+            NumberOfWheels = numberOfWheels;
+
         }
 
-        public Vehicle(int numberOfWheels, string registrationNumber, string color, int numberOfSets, string fueltype)
+        public string Stats()
         {
-            this._numberOfWheels = numberOfWheels;
-            this._registrationNumber = registrationNumber;
-            this._color = color;
-            this._numberOfSets = numberOfSets;
-            this._fueltype = fueltype;
+            return $"Model: {Model}\nRegistrationNumber: {RegistrationNumber}\n" +
+                $"Color: {Color}\n" +
+                $"Fueltype: {Fueltype}\n" +
+                $"NumberOfSets: {NumberOfSets}\n" +
+                $"NumberOfWheels: {NumberOfWheels}";
         }
 
 
