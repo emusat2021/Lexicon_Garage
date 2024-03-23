@@ -1,9 +1,9 @@
 ﻿namespace Lexicon_Garage.app
 {
-    internal interface IGarage<T> where T : IVehicle
+    public interface IGarage1<T> where T : IVehicle, IEnumerable<T>
     {
-        void AddVehicle(T vehicle);
-        void ListVehicles();
-        void RemoveVehicle(T vehicleToBeRemoved);
+        (bool, string) AddVehicle(T vehicle);
+        string ListVehicles();
+        (bool, string) RemoveVehicle(T vehicleToBeRemoved);
     }
 }

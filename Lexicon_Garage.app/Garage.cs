@@ -1,12 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Lexicon_Garage.app.UserInterface;
 
 namespace Lexicon_Garage.app
 {
-    internal class Garage<T> : IGarage<T> where T : IVehicle
+    public class Garage<T> : IGarage1<T> where T : IVehicle, IEnumerable<T>
     {
         private T[] vehicles;
         private int count;
@@ -17,39 +22,42 @@ namespace Lexicon_Garage.app
             count = 0;
         }
 
-        public void AddVehicle(T vehicle)
+        public (bool, string) AddVehicle(T vehicle)
         {
             if (count < vehicles.Length)
             {
                 vehicles[count++] = vehicle;
+                return (true, "Vehicle added succesfully");
             }
             else
             {
-                Console.WriteLine("The is no place in the Garage");
+                return (false, "There is no place in the Garage");
             }
         }
 
-        public void RemoveVehicle(T vehicleToBeRemoved)
+        public (bool, string) RemoveVehicle(T vehicleToBeRemoved)
         {
             int index = Array.IndexOf(vehicles, vehicleToBeRemoved);
             if (index != -1)
             {
                 vehicles = vehicles.Where((val, idx) => idx != index).ToArray();
                 count--;
-                Console.WriteLine($"{vehicleToBeRemoved} removed");
+                return (true, $"{vehicleToBeRemoved} removed");
             }
             else
             {
-                Console.WriteLine($"{nameof(vehicleToBeRemoved)} no found in Garage");
+                return (false, $"{nameof(vehicleToBeRemoved)} no found in Garage");
             }
         }
 
-        public void ListVehicles()
+        public string ListVehicles()
         {
+            Console.WriteLine("Vehicles in the garage:");
             foreach (T vehicle in vehicles)
             {
-                Console.WriteLine($"{nameof(vehicle)} are in the Garage");
+                return $"{vehicle.GetType().Name}:\n {vehicle.Stats()}";
             }
+            return "No vehicles in the Garage";
         }
 
 
