@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexicon_Garage.app", "Lexicon_Garage.app\Lexicon_Garage.app.csproj", "{880566FF-082A-41DA-B12A-9D59A91382FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexicon_Garage.app", "Lexicon_Garage.app\Lexicon_Garage.app.csproj", "{880566FF-082A-41DA-B12A-9D59A91382FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{09E19953-C689-4892-AE1C-8BF349C8FF3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{880566FF-082A-41DA-B12A-9D59A91382FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{880566FF-082A-41DA-B12A-9D59A91382FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{880566FF-082A-41DA-B12A-9D59A91382FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E19953-C689-4892-AE1C-8BF349C8FF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E19953-C689-4892-AE1C-8BF349C8FF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E19953-C689-4892-AE1C-8BF349C8FF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E19953-C689-4892-AE1C-8BF349C8FF3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
