@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Lexicon_Garage.app
 {
-    internal class Vehicle : IVehicle
+    public class Vehicle : IVehicle
     {
         public string Model { get; set; }
         public string RegistrationNumber { get; set; }

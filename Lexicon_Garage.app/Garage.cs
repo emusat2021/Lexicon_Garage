@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Lexicon_Garage.app.UserInterface;
+using System.Collections;
 
 namespace Lexicon_Garage.app
 {
-    public class Garage<T> : IGarage1<T> where T : IVehicle, IEnumerable<T>
+    public class Garage<T> : IEnumerable<T>, IGarage<T> where T : IVehicle
     {
         private T[] vehicles;
         private int count;
@@ -46,19 +47,30 @@ namespace Lexicon_Garage.app
             }
             else
             {
-                return (false, $"{nameof(vehicleToBeRemoved)} no found in Garage");
+                return (false, "Vehicle not found in Garage");
             }
         }
 
         public string ListVehicles()
         {
-            Console.WriteLine("Vehicles in the garage:");
+            string result = "Vehicles in the garage:\n";   
             foreach (T vehicle in vehicles)
             {
-                return $"{vehicle.GetType().Name}:\n {vehicle.Stats()}";
+                result +=  $"{vehicle.GetType().Name}:\n {vehicle.Stats()}";
             }
-            return "No vehicles in the Garage";
+            return result;
+            
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for(int i = 0;  i < count; i++) 
+            {
+                yield return vehicles[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
     }
