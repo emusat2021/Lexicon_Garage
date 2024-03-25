@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexicon_Garage.app", "Lexicon_Garage.app\Lexicon_Garage.app.csproj", "{880566FF-082A-41DA-B12A-9D59A91382FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{09E19953-C689-4892-AE1C-8BF349C8FF3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexicon_Garage.tests", "TestProject1\Lexicon_Garage.tests.csproj", "{09E19953-C689-4892-AE1C-8BF349C8FF3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
