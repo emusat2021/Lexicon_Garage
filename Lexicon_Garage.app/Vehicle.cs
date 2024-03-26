@@ -13,17 +13,17 @@ namespace Lexicon_Garage.app
         public string RegistrationNumber { get; set; }
         public string Color { get; set; }
         public uint NumberOfWheels { get; set; }
-        public uint NumberOfSets { get; set; }
+        public uint NumberOfSeats { get; set; }
         public string Fueltype { get; set; }
 
         public Vehicle() { }
-        public Vehicle(string model, string registrationNumber, string color, string fueltype, uint numberOfSets, uint numberOfWheels )
+        public Vehicle(string model, string registrationNumber, string color, string fueltype, uint numberOfSeats, uint numberOfWheels )
         {
             Model = model;
             RegistrationNumber = registrationNumber;
             Color = color;
             Fueltype = fueltype;
-            NumberOfSets = numberOfSets;
+            NumberOfSeats = numberOfSeats;
             NumberOfWheels = numberOfWheels;
 
         }
@@ -33,7 +33,7 @@ namespace Lexicon_Garage.app
             return $"Model: {Model}\nRegistrationNumber: {RegistrationNumber}\n" +
                 $"Color: {Color}\n" +
                 $"Fueltype: {Fueltype}\n" +
-                $"NumberOfSets: {NumberOfSets}\n" +
+                $"NumberOfSeats: {NumberOfSeats}\n" +
                 $"NumberOfWheels: {NumberOfWheels}";
         }
 
