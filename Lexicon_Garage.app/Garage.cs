@@ -17,6 +17,10 @@ namespace Lexicon_Garage.app
         private T[] vehicles;
         private int count;
 
+        public Garage()
+        {
+
+        }
         public Garage(int capacity)
         {
             vehicles = new T[capacity];
