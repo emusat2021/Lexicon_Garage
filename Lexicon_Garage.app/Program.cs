@@ -16,7 +16,7 @@ var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
         services.AddSingleton<IUI, UI>();
-        services.AddSingleton<IGarage<IVehicle>, Garage<IVehicle>>();
+        services.AddSingleton<IGarage<IVehicle>>(new Garage<IVehicle>(2));
         services.AddSingleton<IGarageHandler<IVehicle>, GarageHandler<IVehicle>>();
         services.AddSingleton<Manager>();
     })
