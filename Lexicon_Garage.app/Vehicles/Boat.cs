@@ -8,7 +8,7 @@ namespace Lexicon_Garage.app.Vehicles
 {
     internal class Boat : Vehicle
     {
-        public Boat(string model, string registrationNumber, string color, string fueltype, int numberOfSets, int numberOfWheels) : base(model, registrationNumber, color, fueltype, numberOfSets, numberOfWheels)
+        public Boat(string model, string registrationNumber, string color, string fueltype, uint numberOfSets, uint numberOfWheels) : base(model, registrationNumber, color, fueltype, numberOfSets, numberOfWheels)
         {
         }
     }
