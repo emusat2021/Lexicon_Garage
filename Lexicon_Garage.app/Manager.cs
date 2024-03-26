@@ -36,11 +36,12 @@ namespace Lexicon_Garage.app
             {
                 ui.Print("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 5, 0) of your choice"
                     + "\n1. List of Vehicles in the Garage"
-                    + "\n2. List of Vehicles types and the number of every type in the Garage"
+                    + "\n2. List of Vehicles types and the number of every type in the Garage  - not implemented yet"
                     + "\n3. Add a vehicle in the garage"
-                    + "\n4. Remove vehicle in the garage"
-                    + "\n5. Search vehicle in the garage after Registration Number"
-                    + "\n6. Multiple Searchs vehicle in the garage after color, number of wheels"
+                    + "\n4. Remove vehicle in the garage - not implemented yet" 
+                    + "\n5. Search vehicle in the garage after Registration Number - not implemented yet"
+                    + "\n6. Multiple Searchs vehicle in the garage after color, number of wheels - not implemented yet"
+                    + "\n7. Hardcode vehicles_test"
                     + "\n0. Exit the application");
                 try
                 {
@@ -64,6 +65,9 @@ namespace Lexicon_Garage.app
                             break;
                         case '6':
                             MultipleSearchMenu();
+                            break;
+                        case '7':
+                            AddVehiclesForTest();
                             break;
                         case '0':
                             Environment.Exit(0);
@@ -210,10 +214,14 @@ namespace Lexicon_Garage.app
         }
         private void ListVehiclesTypes()
         {
-           // IVehicle motorcycle = new Motorcycle("Fiat", "15ABC", "black", "Disel", 2, 2);
+            throw new NotImplementedException("Not implemented yet");
+        }
+        private void AddVehiclesForTest()
+        {
+            IVehicle motorcycle = new Motorcycle("Fiat", "15ABC", "black", "Disel", 2, 2);
             IVehicle car = new Car("BMV", "16ABC", "black", "Disel", 2, 2);
             garageHandler.AddVehicleToGarage(car);
-
+            garageHandler.AddVehicleToGarage(motorcycle);
         }
 
         public string GetStringValue(string displayText)
