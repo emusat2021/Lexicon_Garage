@@ -57,15 +57,23 @@ namespace Lexicon_Garage.app
 
         public string ListVehicles()
         {
-            string result = "Vehicles in the garage:\n";   
-            foreach (T vehicle in vehicles)
+            if(count > 0)
             {
-                result +=  $"{vehicle.GetType().Name}:\n {vehicle.Stats()}";
+                string result = "Vehicles in the garage:\n";
+                foreach (T vehicle in vehicles)
+                {
+                    if (vehicle != null)
+                    {
+                        result += $"{vehicle.GetType().Name}:\n {vehicle.Stats()}";
+                    }
+                }
+                return result;
             }
-            return result;
-            
+            else
+            {
+                return "There are no vehicles in the garage";
+            }
         }
-
         public IEnumerator<T> GetEnumerator()
         {
             for(int i = 0;  i < count; i++) 
