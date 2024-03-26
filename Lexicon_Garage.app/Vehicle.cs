@@ -12,12 +12,12 @@ namespace Lexicon_Garage.app
         public string Model { get; set; }
         public string RegistrationNumber { get; set; }
         public string Color { get; set; }
-        public int NumberOfWheels { get; set; }
-        public int NumberOfSets { get; set; }
+        public uint NumberOfWheels { get; set; }
+        public uint NumberOfSets { get; set; }
         public string Fueltype { get; set; }
 
-
-        public Vehicle(string model, string registrationNumber, string color, string fueltype, int numberOfSets, int numberOfWheels )
+        public Vehicle() { }
+        public Vehicle(string model, string registrationNumber, string color, string fueltype, uint numberOfSets, uint numberOfWheels )
         {
             Model = model;
             RegistrationNumber = registrationNumber;
