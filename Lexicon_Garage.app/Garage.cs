@@ -29,6 +29,10 @@ namespace Lexicon_Garage.app
 
         public (bool, string) AddVehicle(T vehicle)
         {
+            if (vehicles.Any(v => v != null && v.RegistrationNumber == vehicle.RegistrationNumber))
+            {
+                return (false, "Vehicle with the same registration number already exists in the Garage");
+            }
             if (count < vehicles.Length)
             {
                 vehicles[count++] = vehicle;
