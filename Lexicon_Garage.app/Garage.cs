@@ -33,15 +33,23 @@ namespace Lexicon_Garage.app
             {
                 return (false, "Vehicle with the same registration number already exists in the Garage");
             }
-            if (count < vehicles.Length)
+            try
             {
-                vehicles[count++] = vehicle;
-                return (true, "Vehicle added succesfully");
+                if (count < vehicles.Length)
+                {
+                    vehicles[count++] = vehicle;
+                    return (true, "Vehicle added succesfully");
+                }
+                else
+                {
+                    return (false, "There is no place in the Garage");
+                }
             }
-            else
+            catch(InvalidOperationException e)
             {
-                return (false, "There is no place in the Garage");
+                return (false, e.Message);
             }
+
         }
 
         public (bool, string) RemoveVehicle(T vehicleToBeRemoved)
